@@ -1,0 +1,48 @@
+{% load static %}
+
+<head>
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+	<style>
+		#header{
+			background-color : aliceblue;
+			height : 300px;
+			width : 400px;
+		}
+		#current_matching{
+			
+			background-color : Azure;
+			height : 300px;
+			width : 300px;
+			
+		}
+
+		#map{
+			background-color : Beige;
+			width: 300px;
+			height: 300px;
+		}
+		#previous_game{
+			background-color : CadetBlue;
+			height : 300px;
+			clear : both;
+		}
+		#header, #current_matching, #map, #previous_game {text-align:center;}
+	</style>
+</head>
+<body>
+{%include "navbar.html" %}
+<h1 style="text-align:center"><strong>MATCH UP</strong></h1>
+	<div id = "header" style="text-align:center">
+		<h2>종목표시영역</h2>
+	</div>
+	<div id = "current_matching">
+		<h2>현재매칭가능</h2>
+	</div>
+	<div id = "map">
+		<h2>지도보여주는 영역</h2>
+	</div>
+	<div id = "previous game">
+		<h2>과거경기내역</h2>
+	</div>
+</body>

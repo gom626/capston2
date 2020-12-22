@@ -1,0 +1,78 @@
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {% for message in messages %}
+        <strong align="center">{{ message.message }}</strong>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {%include "navbar.html"%}
+    <main role="main" class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-md-7 blog-main">
+                <div class="container">
+                    <div class="card-deck mb-3">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                {{blog.title}}
+                            </div>
+                            {% if blog.create_img %}
+                            <div class="text-center">
+                                <img src="{{blog.create_img.url}}" class="rounded" alt="..." width="585.5dp"
+                                    height="585.5dp">
+                            </div>
+                            {% else %}
+                            <a>이미지 미등록</a>
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="/chat/index/{{blog.num}}/"><img src="/static/message.png" alt="detail 이동"
+                                        style="width: 2rem; height:2rem;"></a><br>
+                                <a class="card-title pricing-card-title">{{ blog.main_text|safe|linebreaksbr }}</a><br>
+                                <a> 인원 : {{blog.count}} / {{blog.people}} </a>
+                                <div class="group">
+                                    <a class="my-0 font-weight-normal" href="#">{{ blog.create_user }}</a>
+                                    <small class="text-muted">{{ blog.Edate}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="col-md-3 blog-sidebar">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a>등록자 : </a>
+                            <a class="my-0 font-weight-normal" href="#"><span class="writer_name">{{ blog.create_user}}</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{%url 'regist' blog.num%}">{%csrf_token %}
+                        <input type="submit" class="form-control" value="참가하기">
+                    </form>
+
+                    <br>
+                    <hr>
+                    <a class="card-title pricing-card-title">
+                        <a>&nbsp;&nbsp;게시판 등록일</a><br>
+                        <small class="text-muted">&nbsp;&nbsp;{{ blog.Cdate }}</small></a>
+                    <hr>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+</body>
+{% endblock %}

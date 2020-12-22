@@ -1,0 +1,117 @@
+{%load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Match UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+		
+	</head>
+	{%include "navbar.html" %}
+	<body id="top">
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" data-video="{%static 'images/banner' %}">
+					<div class="inner">
+						<header>
+							<h1>Match Up</h1>
+							<p>스포츠메이트 매칭 서비스</p>
+						</header>
+						<a href="#main" class="more">Learn More</a>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+					<!-- Boxes -->
+						<div class="thumbnails">
+
+							<div class="box">
+								<a class="image fit"><img src="{%static 'images/soccer.png' %}" alt="" /></a>
+								<div class="inner">
+									<h3>축구</h3>
+									<a href={%url 'category' "soccer" %} class="button fit"  data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+							<div class="box">
+								<a class="image fit"><img src="{%static 'images/basket.png' %}" alt="" /></a>
+								<div class="inner">
+									<h3>농구</h3>
+									<a href={%url 'category' "basketball" %} class="button fit" data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+							<div class="box">
+								<a class="image fit"><img src="{%static 'images/base.jpg' %}" alt="" /></a>
+								<div class="inner">
+									<h3>야구</h3>
+									<a href={%url 'category' "baseball" %} class="button style3 fit" data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+							<div class="box">
+								<a class="image fit"><img src="{%static 'images/running.jpeg' %}" alt="" /></a>
+								<div class="inner">
+									<h3>런닝</h3>
+									<a href={%url 'category' "running" %} class="button style2 fit" data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+							<div class="box">
+								<a  class="image fit"><img src="{%static 'images/cycle.jpeg' %}" alt="" /></a>
+								<div class="inner">
+									<h3>자전거</h3>
+									<a href={%url 'category' "bike" %} class="button style3 fit" data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+							<div class="box">
+								<a class="image fit"><img src="{%static 'images/inside.jpg' %}" alt="" /></a>
+								<div class="inner">
+									<h3>실내스포츠</h3>
+									<p></p>
+									<a href={%url 'category' "inner" %} class="button fit" data-poptrox="youtube,800x400">참여하기</a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<h2>서강대학교 컴퓨터공학과 2020 캡스톤디자인 6조</h2>
+						<p>홍정우 장승민 변홍수 송민국</p>
+
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						
+					</div>
+				</footer>
+
+		<!-- Scripts -->
+			<script src="{%static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{%static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{%static 'assets/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{%static 'assets/js/skel.min.js' %}"></script>
+			<script src="{%static 'assets/js/util.js' %}"></script>
+			<script src="{%static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

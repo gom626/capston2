@@ -1,0 +1,92 @@
+{% load static %}
+{% block content %}
+{%include "navbar.html"%}
+<html>
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+ <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_OFs8GwRjKZvMQRV_U7E1OuLI0p4jHXY&callback=initMap" defer></script>
+   
+ <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+	width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      container {
+        height: 100%;
+        margin: 5%;
+        padding: 0;
+      }
+    </style>
+    <script>
+      var map;
+      var seoul = {lat: 37.5642135,lng:127.0016985};
+      //var infoWindow = new google.maps.InfoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: seoul,
+          zoom: 12
+        });
+        var posts = [
+              {% for post in post.all %}
+                {
+                  ALT: "{{ post.ALT }}",
+                  LAT: "{{ post.LAT }}",
+		          TIT: "{{  post.location}}",
+		            ID:"{{post.num}}",
+                },
+              {% endfor %}
+            ]
+        console.log(posts);
+	      for(var key in posts){
+              var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(posts[key].ALT,posts[key].LAT),
+           
+		            //title: 
+            });
+            var infowindow = new google.maps.InfoWindow({
+              content: 'Location' + posts[key].TIT,
+             });
+		       marker.addListener("click",(e)=>{
+                       console.log(marker.get("map"));
+
+			       location.href=("http://35.174.211.247:8000/board/detail/"+marker.ID);
+			       console.log(marker.get("map"));
+              });
+
+            marker.setMap(map);
+            infowindow.open(map,marker);
+
+            
+              
+        }
+        var gogo = {lat: 37.5642135,lng:127.0016985};
+        //map.panTo(gogo);
+        //map.setZoom(12);
+        //console.log(seoul);
+    }
+    </script>
+    <script>
+    $(document).ready(function() {
+	$('#title').text(function() {
+		arr=location.href.split('/');
+	return arr[arr.length-2];
+	});
+});
+</script>
+</head>
+<body>
+    <div class="container">
+	    <div id="name" class="mt-5 mb-5 text-muted text-center"><h1 id="title"></h1></div>
+		    <div id="map">
+    
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+
+

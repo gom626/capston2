@@ -1,0 +1,83 @@
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    {%include "navbar.html"%}
+    <main role="main" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 blog-main">
+                <div class="container">
+                    {% for p in post.all %}
+                    <div class="card-deck mb-3">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                {{p.title}}
+                            </div>
+                            {% if p.create_img %}
+                            <div class="text-center">
+                                <img src="{{p.create_img.url}}" class="rounded" alt="..." width="585.5dp"
+                                    height="585.5dp">
+                            </div>
+                            {% else %}
+                            <a>no</a>
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="{% url 'detail' p.num %}"><img src="/static/message.png" alt="detail 이동"
+                                        style="width: 2rem; height:2rem;"></a>
+                                <a href="{% url 'detail' p.num %}"><img align="right" src="/static/detail.png"
+                                        alt="detail 이동" style="width: 2rem; height:2rem;"></a>
+                                <br>
+                                <a class="card-title pricing-card-title">{{ p.main_text|safe|linebreaksbr }}</a><br>
+                                <a> 인원 : {{p.count}} / {{p.people}} </a>
+                                <div class="group">
+                                    <small>게시자 : {{ p.create_user }}</small>
+                                    <br>
+                                    <small class="text-muted">{{ p.Cdate }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <aside class="col-md-3 blog-sidebar">
+                <div class="card mb-3 bg-light rounded" style="max-width: 540px;" bg-light rounded>
+                    <div class="row no-gutters">
+                        <a></a>
+                        <div class="col-md-5 d-flex align-items-center d-flex justify-content-center">
+                            <img src="{{ profile_pic }}" alt="..." class="rounded-circle" width="60" height="60">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <a><span id="user_name">{{user.username}}</span></a>
+                                <br>
+                                <a href="#">My Profile</a>
+                                <br>
+                                <a href="#">New Post</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h4 class="font-italic">기능 추가 </h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/integerJI">기능1</a></li>
+                        <li><a href="https://www.instagram.com/integer_ji/">기능2</a></li>
+                    </ol>
+                    <footer class="my-2 pt-2 text-muted text-center text-small">
+                        <p class="mb-1"> &copy 밤dle</p>
+                    </footer>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+</body>
+{% endblock %}

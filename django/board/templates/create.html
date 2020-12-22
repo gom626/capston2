@@ -1,0 +1,106 @@
+{% load static %}
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_OFs8GwRjKZvMQRV_U7E1OuLI0p4jHXY&callback=initMap"
+		defer></script>
+	<style type="text/css">
+		#map {
+			height: 400px;
+			width: 100%
+		}
+	</style>
+	<script>
+		var map;
+		var seoul = { lat: 37.551568, lng: 126.990737 };
+		var ALT = document.createElement('input');
+		var LDT = document.createElement('input');
+		var markersArray = [];
+
+		map.panTo(0,0);
+		function initMap() {
+			map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 12,
+				center: seoul,
+			});
+
+			google.maps.event.addListener(map, 'click', function (event) {
+
+				placeMarker(event.latLng);
+				//document.getElementById("ALT").value=event.latLng.lat();
+				//document.getElemnetById("LDT").value=event.latLng.lng();
+				ALT.setAttribute('type', 'number');
+				ALT.setAttribute('name', 'ALT');
+				ALT.setAttribute('value', event.latLng.lat());
+				LDT.setAttribute('type', 'number');
+				LDT.setAttribute('name', 'LDT');
+				LDT.setAttribute('value', event.latLng.lng());
+				//console.log(event.latLng.lat());
+				//console.log(event.latLng.lng());
+			});
+		}
+
+		function placeMarker(location) {
+			var marker = new google.maps.Marker({
+				position: location,
+				map: map,
+			});
+
+			map.setCenter(location);
+		}
+		function postData() {
+			var form = document.inputform;
+			form.appendChild(ALT);
+
+			form.appendChild(LDT);
+
+			form.submit();
+		}
+
+	</script>
+</head>
+
+{% block content %}
+{%include "navbar.html"%}
+<div class="d-flex justify-content-center" width="80%" height="80%">
+	<div class="mt-5 mb-5 text-muted text-center">
+		<div class="card" style="width: 30rem;">
+			<div class="card-body">
+				<h3 class="card-title">게시글 등록</h5>
+					<hr>
+					<h5 class="card-subtitle mb-2 text-muted"></h5><br>
+					<form method="POST" name="inputform" action="{%url 'createPost'%}" enctype="multipart/form-data">  {% csrf_token %}
+						<input name="title" class="form-control" type="text" placeholder="제목">
+						<hr>
+						<input name="create_user_id" class="form-control" type="text" placeholder="등록인 아이디">
+						<hr>
+						<input name="main_text" class="form-control" type="textarea" placeholder="내용">
+						<hr>
+						<input name="Edate" class="form-control" type="date" placeholder="모집날짜">
+						<hr>
+						<input name="people" class="form-control" type="number" placeholder="인원">
+						<hr>
+						<input name="location" class="form-control" type="text" placeholder="위치">
+						<hr>
+						<div id="map"></div>
+						<a align="left">종목 &nbsp; : &nbsp;</a>
+						<select name="game" id="select">
+							<option value="etc">기타</option>
+							<option value="soccer">축구</option>
+							<option value="basketball">농구</option>
+							<option value="baseball">야구</option>
+							<option value="running">런닝</option>
+							<option value="bike">자전거</option>
+							<option value="inner">실내스포츠</option>
+						</select>
+						<input name="create_img" type="file" placeholder="사진">
+						<hr>
+						<input type="submit" class="form-control" value="등록" onClick="postData()">
+					</form>
+					<hr>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

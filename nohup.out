@@ -1,0 +1,42 @@
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.0' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.0' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.0' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.0' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.1' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.1' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Could not rename log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' to '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log.1' (Permission denied).
+[0.001s][error][logging] Error opening log file '/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log': Permission denied
+[0.001s][error][logging] Initialization of output 'file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log' using options 'filecount=10,filesize=102400' failed.
+Invalid -Xlog option '-Xlog:gc*:file=/home/ubuntu/kafka_2.13-2.6.0/bin/../logs/zookeeper-gc.log:time,tags:filecount=10,filesize=102400', see error log for details.
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
